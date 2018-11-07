@@ -4,25 +4,24 @@
        <title>PHP form example: POST</title>
 </head>
 <body>
-<form action="basic-excercise2.php" method="POST">
-Name: <input type="text" name="name" />
-Age: <input type="text" name="age" />
-<input type="submit" name="submit" />
+<form action="basic-excercise3.php" method="POST">
+Number1: <input type="number" name="number1" />
+Number2: <input type="number" name="number2" />
+<input type="submit" name="calc" />
 </form>
 
 <?php
-if(isset($_POST['submit']))
+if(isset($_POST['calc']))
 {
 
-	if(empty($_POST['name']) || empty($_POST['age'])) 
+	if(empty($_POST['number1']) || empty($_POST['number2'])) 
 	{
-		echo "GIMME. YOUR. DATA!";
+		echo "GIMME NUMBERS!";
 	}
 
 	else
 	{
-		echo "Welcome ". $_POST['name'] ."<br />";
-		echo "You are ". $_POST['age'] ." years old.";
+		echo $_POST['number1'] / $_POST['number2'];
 	}
 }
 ?>
